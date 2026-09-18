@@ -1,0 +1,1 @@
+A note compilation of things I learn and read everyday.
