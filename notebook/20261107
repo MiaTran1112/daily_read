@@ -1,0 +1,14 @@
+## 20261107
+
+Reading: Mark Pham's Substack - I let a coding agent build my dashboard. I didn't let it touch the math. (https://markphammm.substack.com/p/i-let-a-coding-agent-build-my-dashboard?utm_source=post-email-title&publication_id=6631214&post_id=222609541&utm_campaign=email-post-title&isFreemail=true&r=4a0ai6&triedRedirect=true&utm_medium=email)
+
+## I let a coding agent build my dashboard
+
+- Anfra is like dbt for dashboards. You define your metrics in files, keep them in Git, and let the coding agent build the dashboard.
+- **AML** is where the math lives. For example, define `% Recommended` once and every chart can use the same calculation.
+- **AQL** is how the dashboard asks for data. You pick the metrics and what to group them by, like average rating by month. AQL handles the joins and aggregation.
+- The first dashboard took about 3 minutes and showed which airlines had the highest ratings. The second took about 35 minutes and answered a better question: how does one airline compare with the rest?
+- The comparison used the same query twice. One filter included the selected airline, and the other excluded it.
+- The agent checked the numbers against SQL and clicked a chart in the browser to make sure it filtered the trend chart.
+- The dashboard showed `read more` as the most-reviewed airline. The scraper had picked up button text as an airline name, so the fix belonged in dbt.
+- The dashboard is an HTML file, but it needs the Anfra server to run queries. Putting the file on GitHub Pages would show an empty page.
